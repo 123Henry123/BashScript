@@ -30,10 +30,10 @@ case $OPERATION in
 		subtract $NUM1 $NUM2
 		;;
 	3)
-		multiplication $NUM1 $NUM2
+		multiply $NUM1 $NUM2
 		;;
 	4)
-		division $NUM1 $NUM2
+		divide $NUM1 $NUM2
 		;;
 	*)
 		echo "Invalid choice"
