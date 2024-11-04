@@ -1,34 +1,38 @@
 #!/bin/bash
-choices=("rock" "paper" "scissors")
-rock=1
-paper=2
-scissors=3
-computer() {
-	echo $((RANDOM % 3 + 1))
-}
-winner() {
-	
-	if [[ ($choices -eq "3" && $computer -eq "2") || 
-			($choices -eq "1" && $computer -eq "3") || 
-			($choices -eq "2" && $computer -eq "1") ]]; then
-				echo "You win"
-	else 
-		echo "You lose"
-	fi
-}
- if [[ $guess == "$computer" ]]; then
-		echo "tie!"
-while true; do
-	read -p "enter rock(1), paper(2), scissors(3), or type exit to quit" guess
-	if [[ $guess == "exit" ]]; then
-		echo "thanks for playing"
-		break
-	fi
-	
-	
-	comp_choice=$(computer)
-	echo "Computer chose: $comp_choice"
+choices=("rock, paper, scissors")
 
-	winner
-done
- fi
+read -p "Type rock, paper, or scissors:" user_choice
+
+user_choice=$(echo "$user_choice" | tr '[:upper:]' '[:lower:]')
+
+computer_choice=${choices[$RANDOM % 3]}
+
+echo "You chose: $user_choice"
+echo "computer chose: $computer_choice"
+
+case "$user_choice" in
+	rock)
+		case "$computer_choice" in
+			rock) echo "It's a tie" ;;
+			paper) echo "You lose" ;;
+			scissors) echo "You win" ;;
+		esac
+		;;
+	paper)
+		case "$computer_choice" in
+			rock) echo "You win" ;;
+			paper) echo "It's a tie" ;;
+			scissors) echo "You lose" ;;
+		esac
+		;;
+	scissors)
+		case "$computer_choice" in
+			rock) echo "You lose" ;;
+			paper) echo "You win" ;;
+			scissors) echo "It's a tie" ;;
+		esac
+		;;
+	*)
+		echo "Invalid input"
+		;;
+esac
