@@ -1,5 +1,5 @@
 #!/bin/bash
-choices=("rock, paper, scissors")
+choices=("rock" "paper" "scissors")
 
 read -p "Type rock, paper, or scissors:" user_choice
 
