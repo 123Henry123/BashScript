@@ -39,6 +39,8 @@ case "$math_choice" in
 		sleep 2
 		wait
 		echo "subtraction is when you find the difference between numbers"
+		sleep 3
+		wait
 		;;
 	2) 
 		echo "multipication is represented by x or *"
@@ -51,6 +53,8 @@ case "$math_choice" in
 		sleep 2
 		wait
 		echo "you find the quotient of numbers"
+		sleep 3
+		wait
 		;;
 	3) 
 		echo "to find a variable you need to isolate the variable"
@@ -60,6 +64,8 @@ case "$math_choice" in
 		sleep 2
 		wait
 		echo "you can find the value of a variable"
+		sleep 3
+		wait
 		;;
 	4)
 		echo "Trig is short for trignometry"
@@ -77,5 +83,31 @@ case "$math_choice" in
 		echo "sin is opposite divided by hypoteneuse"
 		echo "cos is adjacent divided by hypoteneuse"
 		echo "tan is opposite divided by adjacent"
+		sleep 3
+		wait
 		;;
 esac
+echo "lets practice your math"
+read -p "what is 5+5: " answer
+if [ $answer -eq 10 ]; then
+	echo "correct"
+else 
+	echo "wrong"
+fi
+read -p "what is 84-54: " answer_2
+if [ $answer_2 -eq 30 ]; then
+	echo "correct"
+else 
+	echo "wrong"
+fi
+read -p "what is 18x23" answer_3
+if [ $answer_3 -eq 414 ]; then
+	echo "correct"
+else
+	echo "wrong"
+fi
+read -p " if tanθ = 1 what is θ" answer_4
+if [ $answer_4 -eq 45 ]; then
+	echo "correct"
+else 
+	echo "wrong"
