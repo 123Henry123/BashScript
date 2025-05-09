@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Define the CSV file and LDAP group
+file="zoo_staff_directory.csv"
+ldap_group="staff"
+read -p "whats your password: " passwd
+
+# Define a starting UID number (if you need to customize this, set it accordingly)
+uid_start=1000
+
+# Read the CSV file line by line, skip header (first line)
+tail -n +2 $file | while IFS=, read -r name username department dob age pronouns; do
+    # Generate UID number based on the start point and the line number
+
+    uid_number=$((uid_start++))
+
+    # Extract first and last name
+first_name=$(echo $name | cut -d' ' -f1)
+last_name=$(echo $name | cut -d' ' -f2)
+
+password=(slappasswd -s "password")
+
+# Prepare LDAP entry
+dn="uid=$username,cn=users,dc=zoo,dc=local"
+cn="$first_name $last_name"
+sn="$last_name"
+uid="$username"
+
+    # Construct LDAP entry in LDIF format
+cat <<EOF > /ldap-setup/user.ldif
+dn: $dn
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: $uid
+cn: $cn
+sn: $sn
+uidNumber: $uid_number
+gidNumber: 1001
+homeDirectory: /home/$username
+loginShell: /bin/bash
+gecos: $first_name $last_name, $dob, $age, $pronouns
+userPassword: $password
+
+EOF
+
+    # Add the entry to LDAP (replace with the correct ldapadd command)
+    ldapadd -x -D "cn=admin,dc=zoo,dc=local" -w $passwd -f user.ldif
+
+    # Clean up temporary LDIF file
+   
+done
