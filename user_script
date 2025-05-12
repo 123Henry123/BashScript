@@ -27,7 +27,7 @@ sn="$last_name"
 uid="$username"
 
     # Construct LDAP entry in LDIF format
-cat <<EOF > /ldap-setup/user.ldif
+cat <<EOF > /ldap-setup/BashScript/user.ldif
 dn: $dn
 objectClass: inetOrgPerson
 objectClass: posixAccount
