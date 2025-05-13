@@ -8,6 +8,6 @@ uidNumber: 1052
 gidNumber: 1001
 homeDirectory: /home/zanderson
 loginShell: /bin/bash
-gecos: "Zeke Anderson, 2007-06-01, 17, He/Him"
-userPassword: {SSHA}HtEjnwXWACrBCo4TySRQnlTnsWxPiLSY
+gecos: "2007-06-01, 17, He/Him"
+userPassword: {SSHA}1CprbV5ThMyZbLPO57V+8yoekhAAhDVJ
 

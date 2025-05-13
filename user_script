@@ -39,7 +39,7 @@ uidNumber: $uid_number
 gidNumber: 1001
 homeDirectory: /home/$username
 loginShell: /bin/bash
-gecos: "$first_name $last_name, $dob, $age, $pronouns"
+gecos: "$dob, $age, $pronouns"
 userPassword: $password
 
 EOF
@@ -50,6 +50,10 @@ EOF
     # Clean up temporary LDIF file
    
 done
+
+
+
+
 
 #This script makes users. 
 #It reads the csv file because of the tail command and it skips the first line which is often headers.
