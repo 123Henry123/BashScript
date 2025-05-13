@@ -1,0 +1,13 @@
+dn: uid=zanderson,cn=users,dc=zoo,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: zanderson
+cn: Zeke Anderson
+sn: Anderson
+uidNumber: 1052
+gidNumber: 1001
+homeDirectory: /home/zanderson
+loginShell: /bin/bash
+gecos: "Zeke Anderson, 2007-06-01, 17, He/Him"
+userPassword: {SSHA}HtEjnwXWACrBCo4TySRQnlTnsWxPiLSY
+

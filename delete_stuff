@@ -8,3 +8,8 @@ tail -n +2 $file | while IFS=, read -r name username department birthday age pro
 echo "deleting $uid"
 ldapdelete -D "cn=admin,dc=zoo,dc=local" -w $password "uid=$uid,cn=users,dc=zoo,dc=local"
 done
+
+# This script deletes users
+# It asks for my ldap password so I can delete all the users without manually typing it out for each one
+# It reads the csv and stores the uid in the vaiable "username"
+# Then it checks to make sure there are no extra spaces and stores it in the variable "uid"
