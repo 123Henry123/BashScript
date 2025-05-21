@@ -4,10 +4,10 @@ objectClass: posixAccount
 uid: zanderson
 cn: Zeke Anderson
 sn: Anderson
-uidNumber: 1052
+uidNumber: 1053
 gidNumber: 1001
 homeDirectory: /home/zanderson
 loginShell: /bin/bash
-gecos: "2007-06-01, 17, He/Him"
-userPassword: {SSHA}1CprbV5ThMyZbLPO57V+8yoekhAAhDVJ
+gecos: Zeke, 2007-06-01, 17, He/Him
+userPassword: {SSHA}+s2sb8p74XgdRTWIzifEA3ykuUa7pA05
 

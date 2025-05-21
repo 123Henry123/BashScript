@@ -1,0 +1,5 @@
+#!/bin/bash
+read -p "Who is inactive? " inactivePerson
+
+
+ldapmodify -x -D "cn=admin,dc=zoo,dc=local"

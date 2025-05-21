@@ -3,11 +3,13 @@
 # Define the CSV file and LDAP group
 file="zoo_staff_directory.csv"
 ldap_group="staff"
-read -p "what is the users password? " users_password
-read -p "whats your password: " passwd
+read -s -p "what is the users password? " users_password
+echo
+read -s -p "whats your password: " passwd
+echo
 
 # Define a starting UID number (if you need to customize this, set it accordingly)
-uid_start=1000
+uid_start=1001
 
 # Read the CSV file line by line, skip header (first line)
 tail -n +2 $file | while IFS=, read -r name username department dob age pronouns; do
@@ -19,7 +21,7 @@ tail -n +2 $file | while IFS=, read -r name username department dob age pronouns
 first_name=$(echo $name | cut -d' ' -f1)
 last_name=$(echo $name | cut -d' ' -f2)
 
-password=$(sudo slappasswd -s "users_password")
+password=$(sudo slappasswd -s $users_password)
 
 # Prepare LDAP entry
 dn="uid=$username,cn=users,dc=zoo,dc=local"
@@ -39,7 +41,7 @@ uidNumber: $uid_number
 gidNumber: 1001
 homeDirectory: /home/$username
 loginShell: /bin/bash
-gecos: "$dob, $age, $pronouns"
+gecos: $first_name, $dob, $age, $pronouns
 userPassword: $password
 
 EOF
