@@ -1,7 +1,7 @@
 #!/bin/bash
 
 file=zoo_staff_directory.csv
-read -p "what is your password: " password
+read -s -p "what is your password: " password
 tail -n +2 $file | while IFS=, read -r name username department birthday age pronouns; do
 
   uid=$(echo "$username" | xargs)
