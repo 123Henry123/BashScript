@@ -1,6 +1,7 @@
 dn: uid=zanderson,cn=users,dc=zoo,dc=local
 objectClass: inetOrgPerson
 objectClass: posixAccount
+objectClass: shadowAccount
 uid: zanderson
 cn: Zeke Anderson
 sn: Anderson
@@ -9,5 +10,5 @@ gidNumber: 1001
 homeDirectory: /home/zanderson
 loginShell: /bin/bash
 gecos: Zeke, 2007-06-01, 17, He/Him
-userPassword: {SSHA}5T4axo8QeXqC7DzvFtdJWkcLVjyEFuXW
+userPassword: {SSHA}9dtPMozFR/Eab4P1+AviKpQ6YpRBtaHU
 

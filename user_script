@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# Define the CSV file and LDAP group
+#set the name of the csv file to read
 file="zoo_staff_directory.csv"
-ldap_group="staff"
+#set's user password
 read -s -p "what is the users password? " users_password
 echo
-read -s -p "whats your password: " passwd
+#asks for your ldap password
+read -s -p "whats your ldap password: " passwd
 echo
 
 # Define a starting UID number (if you need to customize this, set it accordingly)
@@ -34,6 +35,7 @@ cat <<EOF > /ldap-setup/BashScript/user.ldif
 dn: $dn
 objectClass: inetOrgPerson
 objectClass: posixAccount
+objectClass: shadowAccount
 uid: $uid
 cn: $cn
 sn: $sn
