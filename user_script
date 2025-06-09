@@ -35,7 +35,6 @@ cat <<EOF > /ldap-setup/BashScript/user.ldif
 dn: $dn
 objectClass: inetOrgPerson
 objectClass: posixAccount
-objectClass: shadowAccount
 uid: $uid
 cn: $cn
 sn: $sn

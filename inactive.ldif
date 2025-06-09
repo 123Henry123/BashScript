@@ -1,0 +1,4 @@
+dn: uid=ayusuf,cn=users,dc=zoo,dc=local
+changetype: modify
+replace: loginShell
+loginShell: /sbin/nologin
