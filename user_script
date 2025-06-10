@@ -2,14 +2,14 @@
 
 #set the name of the csv file to read
 file="zoo_staff_directory.csv"
-#set's user password
+#sets user password
 read -s -p "what is the users password? " users_password
 echo
 #asks for your ldap password
 read -s -p "whats your ldap password: " passwd
 echo
 
-# Define a starting UID number (if you need to customize this, set it accordingly)
+# Define a starting UID number it is 1001 cause the local user on client is 1000
 uid_start=1001
 
 # Read the CSV file line by line, skip header (first line)
