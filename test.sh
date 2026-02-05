@@ -20,3 +20,4 @@ while [[ $number -ne $target ]]; do
 	fi
 done
 echo "good job"
+echo "hi"
